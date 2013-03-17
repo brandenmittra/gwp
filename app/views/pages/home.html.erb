@@ -1,12 +1,17 @@
-<div class="hero-unit">
-	<h1>Welcome to the Gameworn Project</h1>
-	<p>
-		You've found the
-		<%= link_to "Gameworn Project", "http://richter35.com" %>,
-		a crowdsourced resource for sharing and learning about game worn hockey history.
-	</p>
-	<p>
-		<%= link_to'Sign Up Now!', "#", class: "btn btn-primary btn-large" %>
-	</p>
-</div>
+<% if user_signed_in? %>
+	<h1>You're logged in!</h1>
+<% else %>
+
+	<div class="hero-unit">
+		<h1>Welcome to the Gameworn Project</h1>
+		<p>
+			You've found the
+			<%= link_to "Gameworn Project", "http://richter35.com" %>,
+			a crowdsourced resource for sharing and learning about game worn hockey history.
+		</p>
+		<p>
+			<%= link_to'Sign Up Now!', new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
+	</div>
+<% end %>
 
